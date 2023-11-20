@@ -12,13 +12,13 @@ class PersistentLocationTests: XCTestCase {
         super.tearDown()
     }
 
-    func testEcho() {
+    func teststart() {
         // This is an example of a functional test case for a plugin.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
 
         let implementation = PersistentLocation()
         let value = "Hello, World!"
-        let result = implementation.echo(value)
+        let result = implementation.start(value)
 
         XCTAssertEqual(value, result)
     }

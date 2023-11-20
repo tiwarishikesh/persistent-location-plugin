@@ -9,10 +9,10 @@ import Capacitor
 public class PersistentLocationPlugin: CAPPlugin {
     private let implementation = PersistentLocation()
 
-    @objc func echo(_ call: CAPPluginCall) {
+    @objc func start(_ call: CAPPluginCall) {
         let value = call.getString("value") ?? ""
         call.resolve([
-            "value": implementation.echo(value)
+            "value": implementation.start(value)
         ])
     }
 }

@@ -3,8 +3,7 @@
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
 
     <application
-        android:name=".RunningApp"
-        >
+        android:name=".RunningApp">
         <service android:name=".RunningService"/>
     </application>
 </manifest>

@@ -14,7 +14,7 @@ public class PersistentLocationPlugin extends Plugin {
     private PersistentLocation implementation = new PersistentLocation();
 
     @PluginMethod
-    public void echo(PluginCall call) {
+    public void start(PluginCall call) {
         String value = call.getString("value");
 
         Intent intent = new Intent(getContext(), RunningService.class);
@@ -22,7 +22,20 @@ public class PersistentLocationPlugin extends Plugin {
         getActivity().startService(intent);
 
         JSObject ret = new JSObject();
-        ret.put("value", implementation.echo(value));
+        ret.put("value", implementation.start(value));
+        call.resolve(ret);
+    }
+
+    @PluginMethod
+    public void stop(PluginCall call) {
+        String value = call.getString("value");
+
+        Intent intent = new Intent(getContext(), RunningService.class);
+        intent.setAction("STOP");
+        getActivity().startService(intent);
+
+        JSObject ret = new JSObject();
+        ret.put("value", implementation.start(value));
         call.resolve(ret);
     }
 }

@@ -6,5 +6,6 @@ declare module "@capacitor/core"{
 
 
 export interface PersistentLocationPlugin {
-  echo(options: { value: string }): Promise<{ value: string }>;
+  start(options: { value: string }): Promise<{ value: string }>;
+  stop(options: { value: string }): Promise<{ value: string }>;
 }
